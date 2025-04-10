@@ -1,6 +1,7 @@
 import app from "./app";
+import { env } from "./constants";
 
-const PORT = process.env.PORT || 3000;
+const PORT = env.port;
 
 // Start the server
 app.listen(PORT, () => {
