@@ -11,6 +11,9 @@ export const AppDataSource = new DataSource({
   username: process.env.POSTGRES_USER || "postgres",
   password: process.env.POSTGRES_PASSWORD || "postgres",
   database: process.env.POSTGRES_DB || "internship_connector",
+  ssl: {
+    rejectUnauthorized: false, // Important for cloud PostgreSQL services
+  },
   synchronize: process.env.NODE_ENV === "development", // Set to false in production
   logging: process.env.NODE_ENV === "development",
   entities: [],
